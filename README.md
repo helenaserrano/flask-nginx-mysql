@@ -1,12 +1,17 @@
-# My App Helm Chart
+# Helm Chart: my-app
 
-Este Chart despliega una aplicación compuesta por frontend, backend y base de datos.
+Este Chart despliega una aplicación compuesta por tres componentes:
 
-## Requisitos
-- Helm 3.x
-- Kubernetes cluster (Minikube, kind, EKS, etc.)
+- **Frontend**
+- **Backend**
+- **Database** (PostgreSQL)
+
+## Estructura
+
+Este chart utiliza subdirectorios en `templates/` para organizar los recursos de cada componente. La base de datos utiliza un PVC para persistencia de datos.
 
 ## Instalación
 
 ```bash
 helm install my-app ./my-app
+
