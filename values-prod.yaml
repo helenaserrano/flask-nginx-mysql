@@ -1,0 +1,23 @@
+frontend:
+  image: my-frontend:stable
+  replicas: 3
+  service:
+    type: LoadBalancer
+    port: 80
+
+backend:
+  image: my-backend:stable
+  replicas: 3
+  service:
+    type: LoadBalancer
+    port: 8080
+
+database:
+  image: postgres:15
+  replicas: 1
+  service:
+    type: ClusterIP
+    port: 5432
+  storage:
+    size: 10Gi
+    storageClassName: fast
