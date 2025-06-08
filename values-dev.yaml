@@ -1,0 +1,23 @@
+frontend:
+  image: my-frontend:dev
+  replicas: 1
+  service:
+    type: NodePort
+    port: 3000
+
+backend:
+  image: my-backend:dev
+  replicas: 1
+  service:
+    type: NodePort
+    port: 3001
+
+database:
+  image: postgres:15-alpine
+  replicas: 1
+  service:
+    type: ClusterIP
+    port: 5432
+  storage:
+    size: 512Mi
+    storageClassName: standard
